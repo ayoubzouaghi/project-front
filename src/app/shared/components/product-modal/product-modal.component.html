@@ -1,0 +1,51 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">User</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.close(false)">
+        <span aria-hidden="false">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+
+    <form [formGroup]="productForm">
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label>Name</label>
+            </div>
+
+            <div class="form-group col-md-8">
+                <input type="email" class="form-control" formControlName="name">
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label>Price</label>
+            </div>
+
+            <div class="form-group col-md-8">
+                <input type="number" class="form-control" formControlName="price">
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label>Color</label>
+            </div>
+
+            <div class="form-group col-md-8">
+                <input type="text" class="form-control" formControlName="color">
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<div class="modal-footer">
+    <div class="text-right block pr-lg">
+        <button class="cancel" (click)="activeModal.close(false)" type="reset">
+            Cancel </button>
+        <button class="edit" type="button" (click)="updateProduct()">
+            Save </button>
+        <br><br>
+    </div>
+</div>

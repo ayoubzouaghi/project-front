@@ -1,0 +1,105 @@
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+        <div class="profile-nav col-md-3">
+            <div class="panel">
+                <div class="user-heading round">
+                    <a>
+                        <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                    </a>
+                    <h1>{{user.first_name}}</h1>
+                    <p>{{user.email}}</p>
+                </div>
+            </div>
+        </div>
+        <!--  <div class="profile-info col-md-9">
+            <div class="panel">
+                <div class="panel-body bio-graph-info">
+                    <h1>User Information</h1><button class="btn" (click)="openEditModal()">Edit</button>
+                    <div class="row">product
+
+                        <div class="bio-row">
+                            <p><span>First Name </span>: Camila</p>
+                        </div>
+                        <div class="bio-row">
+                            <p><span>Last Name </span>: Smith</p>
+                        </div>
+                        <div class="bio-row">
+                            <p><span>Country </span>: Australia</p>
+                        </div>
+                        <div class="bio-row">
+                            <p><span>Birthday</span>: 13 July 1983</p>
+                        </div>
+                        <div class="bio-row">
+                            <p><span>Occupation </span>: UI Designer</p>
+                        </div>
+                        <div class="bio-row">
+                            <p><span>Email </span>: jsmith@flatlab.com</p>
+                        </div>
+                        <div class="bio-row">
+                            <p><span>Mobile </span>: (12) 03 4567890</p>
+                        </div>
+                        <div class="bio-row">
+                            <p><span>Phone </span>: 88 (02) 123456</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div> -->
+
+
+
+        <div class="col-md-8">
+            <div class="card card-user">
+                <div>
+                    <div class="col-md-12">
+                        <div class="form-card p-lg">
+                            <div class="content">
+                                <form [formGroup]="profilForm">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>first name</label>
+                                                <input type="text" class="form-control border-input"
+                                                    formControlName="first_name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>last name</label>
+                                                <input type="text" class="form-control border-input"
+                                                    formControlName="last_name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">email</label>
+                                                <input type="email" class="form-control border-input"
+                                                    formControlName="email">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="text-center">
+                                                <button type="submit" class="profil-btn" (click)="updateProfil()">update
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,144 @@
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300&display=swap");
+
+/* Color Variables */
+$red: red;
+$green: green;
+$orange: orange;
+$blue: blue;
+$purple: purple;
+$white: white;
+$black: black;
+$bg: /* #eff3f6 */ #e3e5e6;
+$darkgray-blue: #354052;
+$lightgray-blue: #7f8fa4;
+
+/* Styles */
+body {
+    background: $bg;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 1px;
+}
+
+.text-red {
+    color: $red !important;
+}
+.text-green {
+    color: $green !important;
+}
+.text-orange {
+    color: $orange !important;
+}
+.text-blue {
+    color: $blue !important;
+}
+
+/* buttons */
+.btn-red {
+    background: $red;
+    color: $white;
+    font-size: xx-small;
+    &:hover,
+    &:focus {
+        background: darken($red, 8%);
+        color: white;
+    }
+}
+.btn-grayblue {
+    background: lighten($lightgray-blue, 15%);
+    color: $white;
+    font-size: xx-small;
+    &:hover,
+    &:focus {
+        background: lighten($lightgray-blue, 8%);
+        color: white;
+    }
+}
+
+/* Custom scrollbar */
+.main {
+    // width
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+    // Track
+    ::-webkit-scrollbar-track {
+        // box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+    }
+    // Handle
+    ::-webkit-scrollbar-thumb {
+        background: lighten($darkgray-blue, 20%);
+        border-radius: 10px;
+    }
+    // Handle on hover
+    ::-webkit-scrollbar-thumb:hover {
+        background: lighten($darkgray-blue, 10%);
+    }
+}
+/* Left Menu */
+.left {
+    width: 47px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    // background: lighten($black, 35%);
+    background: $darkgray-blue;
+    position: fixed;
+    transition: all 0.5s;
+    &:hover {
+        width: 200px;
+        ul li.menu-heading {
+            opacity: 1;
+        }
+    }
+    ul {
+        padding-left: 0;
+        li {
+            list-style-type: none;
+            &.active a {
+                background: lighten($green, 10%);
+                color: $white;
+                &:hover {
+                    background: lighten($green, 5%);
+                }
+            }
+            a {
+                display: flex;
+                align-items: center;
+                // background: lighten($black, 35%);
+                background: $darkgray-blue;
+                color: $white;
+                padding: 15px 10px;
+                font-size: 13px;
+                width: 200px;
+                border-bottom: 1px solid darken($darkgray-blue, 5%);
+                &:hover {
+                    // background: $black;
+                    background: darken($darkgray-blue, 5%);
+                    text-decoration: none;
+                    i.fa {
+                        color: lighten($green, 10%);
+                    }
+                }
+                &:focus {
+                    text-decoration: none;
+                }
+                i.fa {
+                    width: 50px;
+                    text-align: center;
+                    padding-right: 15px;
+                    transition: all 1s;
+                }
+            }
+        }
+        .menu-heading {
+            opacity: 0;
+            padding: 10px 5px 10px 10px;
+            color: darken(yellow, 15%);
+            font-size: smaller;
+            border-bottom: 1px solid darken($darkgray-blue, 5%);
+            transition: all 0.5s;
+        }
+    }
+}

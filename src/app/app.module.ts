@@ -5,19 +5,28 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     AuthModule,
     SharedModule,
-    CoreModule
+    CoreModule,
+    HttpClientModule,
+    FontAwesomeModule,
+    NgbModule
+
   ],
   providers: [],
+  exports: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
