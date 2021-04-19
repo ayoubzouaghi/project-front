@@ -11,7 +11,9 @@ export class UserProfileComponent implements OnInit {
   constructor(private authservice: AuthService) { }
 
   ngOnInit(): void {
+    console.log('hi')
     this.authservice.getuser().then(res => {
+      console.log('user', res)
       this.user = res.user
     })
   }

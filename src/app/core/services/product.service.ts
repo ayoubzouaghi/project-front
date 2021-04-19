@@ -27,6 +27,6 @@ export class ProductService {
     return this.http.delete(environment.apiUrl + 'product/delete/' + data.id)
   }
   updateProduct(data: any): Observable<any> {
-    return this.http.put(environment.apiUrl + 'product/user/product/' + data.id, { data })
+    return this.http.put(environment.apiUrl + 'product/edit/' + data.id, { data })
   }
 }

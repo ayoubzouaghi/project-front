@@ -61,7 +61,7 @@ export class ListUsersComponent implements OnInit {
 
   openConfirmModal(user: any) {
     const modalRef = this.modalService.open(ConfirmModalComponent);
-    modalRef.componentInstance.user = user;
+    modalRef.componentInstance.data = user;
     modalRef.componentInstance.delete.subscribe((resp: any) => {
       this.authService.deleteUser(resp).subscribe(((res: any) => {
         this.init()

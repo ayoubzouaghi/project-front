@@ -1,2 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+input {
+    display: block;
+    margin: auto auto;
+    width: 100%;
+    margin-bottom: 2em;
+    padding: 0.5em 0;
+    border: none;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 1.25em;
+    color: #757575;
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn {
+    display: inline-block;
+    background: #2a2a2a;
+    border: 1px solid darken(#2a2a2a, 5%);
+    padding: 0.5em 2em;
+    color: white;
+    margin-right: 0.5em;
+    box-shadow: inset 0px 1px 0px fadeout(white, 80%);
+    &:hover {
+        background: lighten(#2a2a2a, 5%);
+        color: white;
+    }
+    &:active {
+        background: #2a2a2a;
+        box-shadow: inset 0px 1px 1px fadeout(black, 90%);
+        color: white;
+    }
+    &:focus {
+        outline: none;
+    }
+}

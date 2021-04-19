@@ -1,2 +1,3 @@
-<app-profile *ngIf="user" c[user]="user" (updateProfileEmitter)="updateProfileEvent($event)">
+<app-profile *ngIf="user" [user]="user" (updateProfileEmitter)="updateProfileEvent($event)"
+    (updateProfileEmitter)="updateProfileEvent($event)">
 </app-profile>

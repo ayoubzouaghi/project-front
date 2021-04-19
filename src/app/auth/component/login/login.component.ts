@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/admin/list']);
         }
         else {
-          this.router.navigate(['/user/product']);
+          this.router.navigate(['/user/list']);
         }
       });
 

@@ -47,3 +47,19 @@ a {
 a:hover {
     text-decoration: none;
 }
+
+.add-user {
+    float: right;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid transparent;
+    border-radius: 0;
+}

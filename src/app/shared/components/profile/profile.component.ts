@@ -25,6 +25,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.authservice.getuser().then(res => {
+      console.log('profile', res)
       this.user = res.user
     })
     this.authservice.getProfilImage().then(res => {
@@ -52,6 +53,8 @@ export class ProfileComponent implements OnInit {
       id: formValue.id,
       first_name: formValue.first_name,
       last_name: formValue.last_name,
+      email: formValue.email as string,
+
 
 
     });
@@ -81,6 +84,7 @@ export class ProfileComponent implements OnInit {
       id: formModel.id,
       first_name: formModel.first_name as string,
       last_name: formModel.last_name as string,
+      email: formModel.email as string,
 
     };
     return data;

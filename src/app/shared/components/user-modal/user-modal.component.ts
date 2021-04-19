@@ -22,8 +22,6 @@ export class UserModalComponent implements OnInit {
   ) {
 
   }
-
-
   ngOnInit() {
     this.initData()
     if (this.user != null) {
@@ -34,16 +32,13 @@ export class UserModalComponent implements OnInit {
   initData() {
     this.userForm = this.formBuilder.group({
       'id': new FormControl(''),
-      'email': new FormControl(''),
-
-
+      'email': new FormControl('')
     })
   }
   updateForm(formValue: any) {
     this.userForm.patchValue({
       'id': formValue.id,
-      'email': formValue.email,
-
+      'email': formValue.email
     })
   }
   updateUser() {

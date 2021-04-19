@@ -83,7 +83,9 @@ export class AuthService {
     });
 
   }
-
+  updateProfilImage(data: any): Observable<any> {
+    return this.http.put(environment.apiUrl + 'users/update/profil/image', { data })
+  }
   getProfilImage(): Promise<any> {
 
     return new Promise((resolve, reject) => {

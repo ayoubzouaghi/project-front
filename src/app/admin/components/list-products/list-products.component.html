@@ -1,56 +1,4 @@
 <!-- <div class="container">
-    <div class="main-box no-header clearfix">
-        <div class="table-responsive">
-            <table class="table user-list">
-                <thead>
-                    <tr>
-                        <th><span>NAME</span></th>
-                        <th><span>PRICE</span></th>
-                        <th><span>COLOR</span></th>
-                        <th><span>Action</span></th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let prod of products">
-                        <td>
-                            <span class="label label-default">{{prod.name}}</span>
-                        </td>
-                        <td>
-                            <span class="label label-default">{{prod.price}}</span>
-                        </td>
-                        <td>
-                            <a>{{prod.color}}</a>
-                        </td>
-                        <td style="width: 20%;">
-
-                            <a class="table-link text-info">
-                                <span class="fa-stack">
-                                    <i class="fa fa-square fa-stack-2x"></i>
-                                    <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                            <a class="table-link danger">
-                                <span class="fa-stack">
-                                    <i class="fa fa-square fa-stack-2x"></i>
-                                    <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table>
-        </div>
-
-    </div>
-</div> -->
-
-
-<!-- <app-list-product [user]="user" [products]="product" (delete)="openConfirmModal($event)" (update)="openModal($event)">
-</app-list-product> -->
-
-<div class="container">
     <a (click)="openModal(null)" class="btn btn-sm btn-success mb-2">Add product</a>
 
     <div class="row">
@@ -83,5 +31,60 @@
                 </div>
             </div>
         </div>
+    </div>
+</div> -->
+
+
+<div class="container mydiv">
+    <a (click)="openModal(null)" class="btn btn-sm btn-success mb-2">Add product</a>
+
+    <div class="row">
+        <div class="col-md-4" *ngFor="let product of product">
+            <!-- bbb_deals -->
+            <div class="bbb_deals">
+
+                <div class="bbb_deals_slider_container">
+                    <div class=" bbb_deals_item">
+                        <div class="card__top__section">
+                            <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1562074043/234.png" alt="">
+                            <div class="card__top__section__icons">
+                                <div>
+                                    <i class="fa fa-edit" (click)="openModal(product)"></i>
+                                </div>
+                                <div>
+                                    <i class="fa fa-trash-o" (click)="openConfirmModal(product)"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- <div class="bbb_deals_image"><img
+                                src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1562074043/234.png" alt="">
+                        </div> -->
+                        <div class="bbb_deals_content">
+
+                            <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
+                                <div class="bbb_deals_item_name">Name</div>
+                                <div class="bbb_deals_item_price ml-auto">Price</div>
+                                <div class="bbb_deals_item_price ml-auto">Color</div>
+
+                            </div>
+
+                        </div>
+                        <div class="bbb_deals_content">
+
+                            <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
+                                <div class="bbb_deals_item_name">{{product.name}}</div>
+                                <div class="bbb_deals_item_price ml-auto">{{product.price}}</div>
+                                <div class="bbb_deals_item_price ml-auto">{{product.color}}</div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </div>
