@@ -31,37 +31,21 @@ export class ListProductsComponent implements OnInit {
 
     })
   }
-  openConfirmModal(product: any) {
-    const modalRef = this.modalService.open(ConfirmModalComponent);
-    modalRef.componentInstance.data = product;
-    modalRef.componentInstance.delete.subscribe((resp: any) => {
-      console.log('list-productts', resp)
-      this.productservice.delete(resp).subscribe(((res: any) => {
-        this.init()
-        modalRef.close()
-      }))
-    })
+
+
+
+
+
+  openModal(product: any) {
+
+    this.update.emit(product)
+
 
   }
 
-  openModal(product: any) {
-    console.log('product', product)
-    this.selctedEntity = product
-    const modalRef = this.modalService.open(ProductModalComponent);
-    modalRef.componentInstance.products = product;
-    modalRef.componentInstance.update.subscribe((resp: any) => {
-      if (this.selctedEntity) {
-        this.productservice.updateProduct(resp).subscribe(((res: any) => {
-          this.init()
-          modalRef.close()
-        }))
-      }
-      /* else {
-        this.productservice.addProduct(resp).subscribe(res => {
+  openConfirmModal(product: any) {
 
-        })
-      } */
-    })
+    this.delete.emit(product)
 
   }
 }

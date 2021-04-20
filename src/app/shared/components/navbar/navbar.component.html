@@ -1,99 +1,15 @@
-<!-- <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Lookimobile</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-home"></i>
-                    Home
-                    <span class="sr-only">(current)</span>
-                </a>
-            </li>
-
-
-        </ul>
-        <ul class="navbar-nav ">
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-bell">
-                        <span class="badge badge-info">11</span>
-                    </i>
-                </a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-envelope-o">
-                    </i>
-
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Profil</a>
-                    <a class="dropdown-item" href="#">Log out</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav> -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
-        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">Navbar</a>
-
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-
-        </ul>
-
-    </div><!-- right menu -->
-    <div class="collapse navbar-collapse right-nav" id="collapseBasic">
-        <ul class="navbar-nav">
-            <!--
-        <li class="nav-item dropdown" *ngIf="user">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            {{user.first_name}} </a>
-          <div class="dropdown-menu dropdown-menu-right" >
-            <a class="dropdown-item" >Profile</a>
-            <a class="dropdown-item"(click)="logout()">Log out</a>
-          </div>
-        </li> -->
-
-            <!-- <li class="nav-item">
-          <a [routerLink]="['/admin/dashboard/calendar']">
-            <i class="fa fa-calendar" aria-hidden="true"></i>
-          </a>
-        </li> -->
-
-            <li class="nav-item">
-                <a class="sign-out pull-right">
-                    <span (click)="logout()">signOut</span><i class="fa fa-sign-out-alt icon"></i>
-
-                </a>
-            </li>
-        </ul>
-
-    </div>
-
-</nav>
-
 <div class="main">
     <div class="left" *ngIf="user">
         <ul>
             <li class="menu-heading">Dashboards</li>
             <li><a data-toggle="tab" [routerLink]="['/user/list']"><i class="fa fa-list"></i>My products</a></li>
             <li><a data-toggle="tab" [routerLink]="['/user/profil']"><i class="fa fa-user"></i> Profile</a></li>
+            <li>
+                <a data-toggle="tab">
+                    <span (click)="logout()">signOut</span><i class="fa fa-sign-out-alt icon"></i>
 
+                </a>
+            </li>
 
 
         </ul>
@@ -107,7 +23,12 @@
             <li><a data-toggle="tab" [routerLink]="['/admin/products']"><i class="fa fa-line-chart"></i>List of
                     Products</a>
             </li>
+            <li>
+                <a data-toggle="tab">
+                    <span (click)="logout()">signOut</span><i class="fa fa-sign-out-alt icon"></i>
 
+                </a>
+            </li>
 
         </ul>
     </div>

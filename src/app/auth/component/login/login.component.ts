@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
   }
   login() {
 
+
     if (this.loginForm.valid) {
       const data = this.prepareLoginInfo();
       this.authService.login(data).then(suc => {
@@ -47,6 +48,10 @@ export class LoginComponent implements OnInit {
       });
 
     }
+
+
   }
 
+
 }
+

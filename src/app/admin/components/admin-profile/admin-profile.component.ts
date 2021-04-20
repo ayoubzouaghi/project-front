@@ -22,11 +22,26 @@ export class AdminProfileComponent implements OnInit {
   }
   updateProfileEvent(user: any) {
     if (user) {
-      this.authservice.updateProfilImage(user).subscribe(res => {
+      this.authservice.updateUser(user).then(res => {
 
         this.initData()
       })
     }
 
+  }
+  UpdatePassword(e: any) {
+    if (e) {
+      this.authservice.changePassword(e).subscribe(res => {
+        this.initData()
+      })
+    }
+
+  }
+  updateProfileImage(e: any) {
+    if (e) {
+      this.authservice.updateProfilImage(e).subscribe(res => {
+        this.initData()
+      })
+    }
   }
 }

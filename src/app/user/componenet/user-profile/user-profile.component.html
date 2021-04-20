@@ -1,1 +1,3 @@
-<app-profile *ngIf="user" [user]="user"></app-profile>
+<app-profile *ngIf="user" [user]="user" (updateProfileEmitter)="updateProfileEvent($event)"
+    (updatePasswordEmitter)="UpdatePassword($event)" (updateProfileImage)="updateProfileImage($event)">
+</app-profile>

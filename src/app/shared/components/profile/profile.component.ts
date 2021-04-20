@@ -11,33 +11,41 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  public isImageSaved: boolean = false;
-  @Output() updateProfileImage = new EventEmitter();
-  @Output() update = new EventEmitter();
-
+  public check = false
   @Input() photo: any
   @Input() user: any;
+  public isImageSaved: boolean = false;
+  @Output() updateProfileImage = new EventEmitter();
+  @Output() updateProfileEmitter = new EventEmitter();
+  @Output() updatePasswordEmitter = new EventEmitter();
+
+
   public profilForm = new FormGroup({});
+  public passwordForm = new FormGroup({});
+
   constructor(private authservice: AuthService,
     private modalService: NgbModal,
     public activeModal: NgbActiveModal,
     private fb: FormBuilder) { }
 
   ngOnInit(): void {
+
     this.authservice.getuser().then(res => {
-      console.log('profile', res)
       this.user = res.user
     })
     this.authservice.getProfilImage().then(res => {
       this.photo = environment.baseImage + res.image
-      console.log(this.photo)
-
     }).catch((error) => {
     });
+
+
+
     this.initForm()
     if (this.user) {
       this.updateProfilForm(this.user);
+      this.updatePasswordForm(this.user)
     }
+    this.init()
   }
   initForm() {
     this.profilForm = this.fb.group({
@@ -45,8 +53,16 @@ export class ProfileComponent implements OnInit {
       'first_name': new FormControl(''),
       'last_name': new FormControl(''),
       'email': new FormControl({ value: '', disabled: true }),
-    })
 
+    })
+  }
+  init() {
+    this.passwordForm = this.fb.group({
+      'id': new FormControl(),
+      'password': new FormControl(''),
+      'new_password': new FormControl(''),
+      'c_new_password': new FormControl(''),
+    })
   }
   updateProfilForm(formValue: any) {
     this.profilForm.patchValue({
@@ -60,7 +76,17 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  updatePasswordForm(formValue: any) {
+    this.profilForm.patchValue({
+      id: formValue.id,
+      password: formValue.password,
+      new_password: formValue.new_password,
+      c_new_password: formValue.c_new_password,
 
+
+
+    });
+  }
   fileProfileEvent(fileInput: any) {
     if (fileInput.target.files && fileInput.target.files[0]) {
       const reader = new FileReader();
@@ -89,9 +115,37 @@ export class ProfileComponent implements OnInit {
     };
     return data;
   }
+  preparePassword() {
+    const formModel = this.passwordForm.value;
+    const data = {
+      id: formModel.id,
+      password: formModel.password as string,
+      new_password: formModel.new_password as string,
+      c_new_password: formModel.c_new_password as string,
+
+    };
+    return data;
+  }
   updateProfil() {
     const data = this.prepareUserInfo();
 
-    this.update.emit(data);
+    this.updateProfileEmitter.emit(data);
+  }
+
+  UpdatePassword() {
+    const data = this.preparePassword();
+
+    this.updatePasswordEmitter.emit(data)
+  }
+  showpassword() {
+    this.check = !this.check;
+
+    if (this.check == true) {
+      (<HTMLInputElement>document.getElementById("pass")).type = "text";
+
+    } else {
+      (<HTMLInputElement>document.getElementById("pass")).type = "password";
+
+    }
   }
 }

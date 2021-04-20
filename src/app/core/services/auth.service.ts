@@ -25,7 +25,7 @@ export class AuthService {
   sendInvitation(data: any): Promise<any> {
 
     return new Promise((resolve, reject) => {
-      this.http.post<any>(environment.apiUrl + 'add', data)
+      this.http.post<any>(environment.apiUrl + 'add/user', data)
         .toPromise()
         .then((response) => {
           resolve(response);
@@ -83,8 +83,8 @@ export class AuthService {
     });
 
   }
-  updateProfilImage(data: any): Observable<any> {
-    return this.http.put(environment.apiUrl + 'users/update/profil/image', { data })
+  updateProfilImage(image: any): Observable<any> {
+    return this.http.put(environment.apiUrl + 'users/update/profil/image', { image: image })
   }
   getProfilImage(): Promise<any> {
 
@@ -108,5 +108,15 @@ export class AuthService {
   }
   deleteUser(data: any): Observable<any> {
     return this.http.delete(environment.apiUrl + 'users/delete/' + data.id)
+  }
+  AddUser(data: any): Observable<any> {
+    return this.http.post(environment.apiUrl + 'users/user/register', { data })
+  }
+  gettokenstate(token: any): Observable<any> {
+    return this.http.post(environment.apiUrl + 'users/verif/token', { token })
+
+  }
+  changePassword(data: any): Observable<any> {
+    return this.http.put(environment.apiUrl + 'users/update/password', { data })
   }
 }
