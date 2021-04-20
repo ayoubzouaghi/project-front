@@ -49,6 +49,8 @@ export class ListUsersComponent implements OnInit {
 
       else {
         this.authService.sendInvitation(resp).then(res => {
+          this.init()
+          modalRef.close()
 
         })
       }

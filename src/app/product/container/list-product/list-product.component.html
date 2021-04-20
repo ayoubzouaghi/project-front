@@ -88,7 +88,8 @@
 
 
 <!-- Page Content -->
-<div class="container">
+<div class="container" *ngIf="products">
+    <a (click)="openModal(null)" class="btn btn-sm btn-success mb-2">Add product</a>
 
     <div class="row">
         <!-- /.col-lg-3 -->
@@ -121,8 +122,9 @@
 
         <div class="row">
 
-            <div class="col-lg-3 col-md-6 mb-4">
-
+            <div class="col-lg-3 col-md-6 mb-4" *ngFor="let product of products">
+                <app-product-card [product]="product" (editProduct)="openModal($event)"
+                    (updateProductImage)="updatephoto($event)"></app-product-card>
             </div>
         </div>
         <!-- /.row -->

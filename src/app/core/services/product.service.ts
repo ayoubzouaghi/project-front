@@ -20,13 +20,18 @@ export class ProductService {
     return this.http.get(environment.apiUrl + 'product/user/product/' + id)
   }
   ProductImage(id: any): Observable<any> {
-    return this.http.get(environment.apiUrl + 'product/image' + id)
+    return this.http.get(environment.apiUrl + 'product/image/' + id)
+  }
+  updateProductImage(image: any, data: any): Observable<any> {
+    return this.http.put(environment.apiUrl + 'product/update/image/' + data.id, { image: image })
   }
   delete(data: any): Observable<any> {
-    console.log('service', data)
     return this.http.delete(environment.apiUrl + 'product/delete/' + data.id)
   }
   updateProduct(data: any): Observable<any> {
-    return this.http.put(environment.apiUrl + 'product/edit/' + data.id, { data })
+    return this.http.put(environment.apiUrl + 'product/edit/' + data.id, data)
+  }
+  AllProduct(): Observable<any> {
+    return this.http.get(environment.apiUrl + 'product/all')
   }
 }

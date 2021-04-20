@@ -5,8 +5,8 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { ListUsersComponent } from './components/list-users/list-users.component';
 import { ContainerComponent } from './container/container.component';
 import { SharedModule } from '../shared/shared.module';
-import { ListProductsComponent } from './components/list-products/list-products.component';
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
+import { ProductModule } from '../product/product.module';
 
 
 @NgModule({
@@ -14,13 +14,14 @@ import { AdminProfileComponent } from './components/admin-profile/admin-profile.
 
     ListUsersComponent,
     ContainerComponent,
-    ListProductsComponent,
     AdminProfileComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    SharedModule
+    SharedModule,
+    ProductModule
+
   ]
 })
 export class AdminModule { }

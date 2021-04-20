@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   apiUrl: "http://localhost/project/public/index.php/api/",
   baseImage: "http://localhost/project/public/images/",
+  baseImageProduct: "http://localhost/project/public/products/"
 }
 /*
  * For easier debugging in development mode, you can import the following file

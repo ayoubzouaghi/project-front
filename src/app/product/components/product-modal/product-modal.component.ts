@@ -12,13 +12,15 @@ export class ProductModalComponent implements OnInit {
   public productForm = new FormGroup({});
   @Input() products: any
   @Output() update = new EventEmitter;
+  @Output() updateProductImage = new EventEmitter
+  public photo: any
+  public isImageSaved: boolean = false
 
   constructor(public activeModal: NgbActiveModal,
     public formBuilder: FormBuilder,
     private productservice: ProductService) { }
 
   ngOnInit(): void {
-    console.log('hani wselt', this.products)
     this.initData()
     if (this.products != null) {
       this.updateForm(this.products)
@@ -31,6 +33,7 @@ export class ProductModalComponent implements OnInit {
       'name': new FormControl(''),
       'color': new FormControl(''),
       'price': new FormControl(''),
+      'image': new FormControl(''),
 
 
     })
@@ -41,11 +44,31 @@ export class ProductModalComponent implements OnInit {
       'id': formValue.id,
       'name': formValue.name,
       'color': formValue.color,
-      'price': formValue.price
+      'price': formValue.price,
+      'image': formValue.image,
+
     })
   }
 
   updateProduct() {
     this.update.emit(this.productForm.value)
   }
+  fileProfileEvent(fileInput: any) {
+    console.log('product Modal', fileInput)
+    if (fileInput.target.files && fileInput.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const image = new Image();
+        image.src = e.target.result;
+        image.onload = (rs) => {
+          const imgBase64Path = e.target.result;
+          this.photo = imgBase64Path;
+          this.isImageSaved = true;
+          this.updateProductImage.emit(this.photo);
+        };
+      };
+      reader.readAsDataURL(fileInput.target.files[0]);
+    }
+  }
+
 }

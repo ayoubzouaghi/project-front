@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProfileComponent } from '../shared/components/profile/profile.component';
+import { ListProductComponent } from '../product/container/list-product/list-product.component';
 import { DashboardComponent } from './componenet/dashboard/dashboard.component';
-import { ListProductsComponent } from './componenet/list-products/list-products.component';
 import { UserProfileComponent } from './componenet/user-profile/user-profile.component';
 
 const routes: Routes = [
@@ -12,7 +11,7 @@ const routes: Routes = [
     children: [
       {
         path: 'list',
-        component: ListProductsComponent
+        component: ListProductComponent
       },
       {
         path: 'profil',
