@@ -30,8 +30,10 @@ export class AdminProfileComponent implements OnInit {
 
   }
   UpdatePassword(e: any) {
+    console.log(e)
     if (e) {
       this.authservice.changePassword(e).subscribe(res => {
+        console.log(res)
         this.initData()
       })
     }

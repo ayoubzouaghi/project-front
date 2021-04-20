@@ -117,6 +117,6 @@ export class AuthService {
 
   }
   changePassword(data: any): Observable<any> {
-    return this.http.put(environment.apiUrl + 'users/update/password', { data })
+    return this.http.put(environment.apiUrl + 'users/update/password', data)
   }
 }

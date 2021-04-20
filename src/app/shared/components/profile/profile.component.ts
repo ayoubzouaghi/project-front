@@ -57,8 +57,9 @@ export class ProfileComponent implements OnInit {
     })
   }
   init() {
+    console.log(this.profilForm.value.id)
     this.passwordForm = this.fb.group({
-      'id': new FormControl(),
+      'id': this.profilForm.value.id,
       'password': new FormControl(''),
       'new_password': new FormControl(''),
       'c_new_password': new FormControl(''),
@@ -78,7 +79,7 @@ export class ProfileComponent implements OnInit {
 
   updatePasswordForm(formValue: any) {
     this.profilForm.patchValue({
-      id: formValue.id,
+      id: this.profilForm.value.id,
       password: formValue.password,
       new_password: formValue.new_password,
       c_new_password: formValue.c_new_password,
@@ -117,6 +118,7 @@ export class ProfileComponent implements OnInit {
   }
   preparePassword() {
     const formModel = this.passwordForm.value;
+    console.log(formModel)
     const data = {
       id: formModel.id,
       password: formModel.password as string,
@@ -124,6 +126,7 @@ export class ProfileComponent implements OnInit {
       c_new_password: formModel.c_new_password as string,
 
     };
+    console.log(data)
     return data;
   }
   updateProfil() {
@@ -134,7 +137,7 @@ export class ProfileComponent implements OnInit {
 
   UpdatePassword() {
     const data = this.preparePassword();
-
+    console.log(data)
     this.updatePasswordEmitter.emit(data)
   }
   showpassword() {
