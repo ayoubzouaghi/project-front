@@ -11,10 +11,22 @@ export class NavbarComponent implements OnInit {
   public isCollapsed = true;
   user = false
   admin = false
+  public button: any
+  public wrapper: any
+
   constructor(private authService: AuthService,
     private router: Router) { }
 
   ngOnInit(): void {
+    this.button = document.querySelector('#sidebar-toggle');
+    this.wrapper = document.querySelector('#wrapper');
+
+    this.button.addEventListener('click', (e: any) => {
+      e.preventDefault();
+      this.wrapper.classList.toggle('toggled');
+    });
+
+
     this.authService.getuser().then(user => {
       this.user = user
     })
