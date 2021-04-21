@@ -3,7 +3,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { ProductService } from 'src/app/core/services/product.service';
 import { ConfirmModalComponent } from 'src/app/shared/components/confirm-modal/confirm-modal.component';
-import { environment } from 'src/environments/environment';
 import { ProductModalComponent } from '../../components/product-modal/product-modal.component';
 
 @Component({
@@ -60,7 +59,6 @@ export class ListProductComponent implements OnInit {
     const modalRef = this.modalService.open(ProductModalComponent);
     modalRef.componentInstance.products = product;
     modalRef.componentInstance.updateProductImage.subscribe((res: any) => {
-      console.log('amaaaaann', res)
       this.updatephoto(res, this.selctedEntity)
     });
     modalRef.componentInstance.update.subscribe((resp: any) => {

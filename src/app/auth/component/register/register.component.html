@@ -1,11 +1,9 @@
-<div class="log-form">
-    <h2>Create an account</h2>
-    <form [formGroup]="registerForm">
-        <input name="" class="form-control" placeholder="first name" type="text" formControlName="first_name">
-        <input name="" class="form-control" placeholder="last_name" type="text" formControlName="last_name">
-        <input name="" class="form-control" placeholder="last_name" type="password" formControlName="password">
+<p class="login-card-description">Create an account</p>
+<form [formGroup]="registerForm">
+    <input name="" class="form-control" placeholder="first name" type="text" formControlName="first_name">
+    <input name="" class="form-control" placeholder="last name" type="text" formControlName="last_name">
+    <input name="" class="form-control" placeholder="password" type="password" formControlName="password">
 
-        <button type="submit" class="btn" (click)="register()">Register</button>
-        <p class="message">You have an account? <a [routerLink]="['/auth/login']">Login</a></p>
-    </form>
-</div>
+    <button type="submit" class="btn" (click)="register()">Register</button>
+    <p class="message">You have an account? <a [routerLink]="['/auth/login']">Login</a></p>
+</form>

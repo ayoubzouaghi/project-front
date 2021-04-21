@@ -110,7 +110,7 @@ export class AuthService {
     return this.http.delete(environment.apiUrl + 'users/delete/' + data.id)
   }
   AddUser(data: any): Observable<any> {
-    return this.http.post(environment.apiUrl + 'users/user/register', { data })
+    return this.http.post(environment.apiUrl + 'users/user/register', data)
   }
   gettokenstate(token: any): Observable<any> {
     return this.http.post(environment.apiUrl + 'users/verif/token', { token })
@@ -118,5 +118,11 @@ export class AuthService {
   }
   changePassword(data: any): Observable<any> {
     return this.http.put(environment.apiUrl + 'users/update/password', data)
+  }
+  resetPassword(data: any): Observable<any> {
+    return this.http.post<any>(environment.apiUrl + 'reset', data)
+  }
+  forgotPassword(data: any): Observable<any> {
+    return this.http.post<any>(environment.apiUrl + 'forget', data)
   }
 }

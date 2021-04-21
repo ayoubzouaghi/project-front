@@ -9,6 +9,7 @@ import { ContainerComponent } from './container/container/container.component';
 import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
 import { ConfirmForgetPasswordComponent } from './component/confirm-forget-password/confirm-forget-password.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { RestPasswordComponent } from './component/rest-password/rest-password.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
     ContainerComponent,
     ForgetPasswordComponent,
     ConfirmForgetPasswordComponent,
+    RestPasswordComponent,
 
   ],
   imports: [
