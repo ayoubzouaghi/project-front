@@ -7,24 +7,19 @@
 <div class="modal-body">
 
     <form [formGroup]="userForm">
-        <div class="row">
-            <div class="form-group col-md-4">
-                <label>email</label>
-            </div>
-
-            <div class="form-group col-md-8">
-                <input type="email" class="form-control" formControlName="email">
-            </div>
-
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp" placeholder="Enter email">
         </div>
     </form>
 </div>
 
 <div class="modal-footer">
     <div class="text-right block pr-lg">
-        <button class="btn cancel" (click)="activeModal.close(false)" type="reset">
+        <button class="btn btn-secondary" (click)="activeModal.close(false)" type="reset">
             Cancel </button>
-        <button class="btn edit" type="button" (click)="updateUser()">
+        <button class="btn button" type="button" (click)="updateUser()">
             Save </button>
         <br><br>
     </div>

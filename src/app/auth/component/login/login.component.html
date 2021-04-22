@@ -22,8 +22,9 @@
         <input type="password" name="password" id="password" class="form-control" placeholder="***********"
             formControlName="password">
     </div>
-    <input name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Login" (click)="login()">
+    <input name="login" id="login" class="btn button mb-4" type="button" value="Login" (click)="login()">
 </form>
+<a [routerLink]="['/auth/forget-password']" class="forgot-password-link">Forgot password?</a>
 <!-- <a href="#!" class="forgot-password-link">Forgot password?</a>
 
 

@@ -1,6 +1,115 @@
-@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-@import url("https://fonts.googleapis.com/css?family=Roboto:300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+a {
+    text-decoration: none;
+}
+.product-card {
+    width: 100%;
+    height: max-content;
+    position: relative;
+    box-shadow: 0 2px 7px #dfdfdf;
+    // margin: 50px auto !important;
+    background: #fafafa;
+    margin-bottom: 20px;
+}
 
-.fa-edit {
+.badge {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    background: red;
+    color: #fff;
+    padding: 3px 10px;
+}
+
+.product-tumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*  height: 300px;
+    padding: 50px; */
+    height: 100%;
+
+    background: #f0f0f0;
+}
+
+.product-tumb img {
+    /*  max-width: 100%;
+    max-height: 100%; */
+
+    width: 100%;
+    height: 15vw;
+    object-fit: fill;
+}
+
+.product-details {
+    padding: 8px;
+}
+
+.product-catagory {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #f8be12;
+    margin-bottom: 18px;
+}
+
+.product-details h4 a {
+    font-weight: 200;
+    display: block;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    color: #363636;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+.product-details h4 a:hover {
+    color: #f8be12;
+}
+
+.product-details p {
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 18px;
+    color: #999;
+}
+
+.product-bottom-details {
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.product-bottom-details div {
+    float: left;
+    width: 50%;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #f8be12;
+    font-weight: 600;
+}
+
+.product-links {
+    text-align: right;
+}
+
+.product-links a {
+    display: inline-block;
+    margin-left: 5px;
+    color: black;
+    transition: 0.3s;
+    font-size: 20px;
+}
+.product-links a:hover {
+    color: #f8be12;
+}
+.color {
     float: right;
 }

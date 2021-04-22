@@ -12,12 +12,10 @@ export class ProductService {
 
   addProduct(data: any): Observable<any> {
     return this.http.post(environment.apiUrl + 'product/add', data)
-      .pipe(
-      )
 
   }
-  UserProduct(id: any): Observable<any> {
-    return this.http.get(environment.apiUrl + 'product/user/product/' + id)
+  UserProduct(): Observable<any> {
+    return this.http.get(environment.apiUrl + 'product/user/products')
   }
   ProductImage(id: any): Observable<any> {
     return this.http.get(environment.apiUrl + 'product/image/' + id)
@@ -33,5 +31,8 @@ export class ProductService {
   }
   AllProduct(): Observable<any> {
     return this.http.get(environment.apiUrl + 'product/all')
+  }
+  userDeleteProduct(id: any): Observable<any> {
+    return this.http.delete(environment.apiUrl + 'product/user/delete/' + id)
   }
 }

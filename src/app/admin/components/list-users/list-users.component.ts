@@ -10,6 +10,8 @@ import { UserModalComponent } from 'src/app/shared/components/user-modal/user-mo
   styleUrls: ['./list-users.component.scss']
 })
 export class ListUsersComponent implements OnInit {
+  public collectionSize: any
+  page = 4
   public users: any
   public user: any
   public selctedEntity: any
@@ -26,6 +28,7 @@ export class ListUsersComponent implements OnInit {
   public init() {
     this.authService.getAllUsers().subscribe(res => {
       this.users = res.users
+      this.collectionSize = res.users
     })
     this.authService.getuser().then(res => {
       this.user = res.user

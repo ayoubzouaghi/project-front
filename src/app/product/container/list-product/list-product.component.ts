@@ -11,10 +11,12 @@ import { ProductModalComponent } from '../../components/product-modal/product-mo
   styleUrls: ['./list-product.component.scss']
 })
 export class ListProductComponent implements OnInit {
+  public pageSize = 25;
   public products: any
   public photo: any
   public selctedEntity: any
   public role: any
+  public page = 4;
   @Input() user: any
   @Input() product: any
   @Output() delete = new EventEmitter;
@@ -26,10 +28,11 @@ export class ListProductComponent implements OnInit {
     this.init()
   }
   init() {
+
     this.role = localStorage.getItem('role')
     if (this.role == -1) {
       this.auth.getuser().then(res => {
-        this.productservice.UserProduct(res.user.id).subscribe(res => {
+        this.productservice.UserProduct().subscribe(res => {
           this.products = res.product
         })
       })
@@ -46,11 +49,24 @@ export class ListProductComponent implements OnInit {
     const modalRef = this.modalService.open(ConfirmModalComponent);
     modalRef.componentInstance.data = product;
     modalRef.componentInstance.delete.subscribe((resp: any) => {
-      this.productservice.delete(resp).subscribe(((res: any) => {
-        this.init()
-        modalRef.close()
-      }))
+      let role = localStorage.getItem('role')
+      console.log('11', localStorage.getItem('role'))
+      console.log('22', role)
+      if (role == "-1") {
+        this.productservice.userDeleteProduct(resp).subscribe(((res: any) => {
+          this.init()
+          modalRef.close()
+        }))
+      }
+      else {
+        console.log(resp.id)
+        this.productservice.delete(resp).subscribe(((res: any) => {
+          this.init()
+          modalRef.close()
+        }))
+      }
     })
+
 
   }
 
@@ -59,15 +75,20 @@ export class ListProductComponent implements OnInit {
     const modalRef = this.modalService.open(ProductModalComponent);
     modalRef.componentInstance.products = product;
     modalRef.componentInstance.updateProductImage.subscribe((res: any) => {
+      console.log(res)
+      console.log(this.selctedEntity)
       this.updatephoto(res, this.selctedEntity)
+      modalRef.close()
+
     });
     modalRef.componentInstance.update.subscribe((resp: any) => {
       if (this.selctedEntity) {
+
         this.productservice.updateProduct(resp).subscribe(((res: any) => {
           this.init();
           modalRef.close()
-        }))
 
+        }))
       }
       else {
         this.productservice.addProduct(resp).subscribe(res => {
@@ -77,12 +98,10 @@ export class ListProductComponent implements OnInit {
         })
       }
     })
-    this.init()
   }
 
   updatephoto(e: any, product: any) {
     if (e) {
-      console.log('ena', e)
       this.productservice.updateProductImage(e, product).subscribe(res => {
         this.init()
       })

@@ -12,11 +12,13 @@ export class UserGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+
     let role = localStorage.getItem("role");
     if (role === '-1') {
       return true;
-    } else if (role === '1') {
-      this.route.navigate(["/admin"]);
+
+    } else if (role === '-1') {
+      this.route.navigate(["user/list"]);
       return false;
     }
 

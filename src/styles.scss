@@ -2,11 +2,6 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Roboto:300&display=swap");
-body {
-    font-family: "Karla", sans-serif;
-    background-color: #ececea;
-    min-height: 100vh;
-}
 
 /* .btn {
     display: inline-block;
@@ -26,4 +21,18 @@ body {
     font-size: 15px;
     line-height: 15;
     font-weight: normal;
+}
+.button {
+    background-color: black;
+    color: white;
+    font-size: 19px;
+    margin-left: 5px;
+}
+.button:hover {
+    background-color: #f8be12;
+    color: black;
+}
+
+.btn-secondary {
+    font-size: 19px;
 }

@@ -1,12 +1,25 @@
-<div class="card h-100">
-
-    <img class="card-img-top" [src]="photo" alt="">
-    <div class="card-body">
-        <h4 class="card-title">
-            <a>{{product.name}}</a>
-            <i class="fa fa-edit" (click)="openEditModal(product)"></i>
+<div class="product-card">
+    <div class="badge">New</div>
+    <div class="product-tumb">
+        <img [src]="photo" alt="" #imgprofil (error)="
+        imgprofil.src =
+        './../../assets/img/error.png'
+        ">
+    </div>
+    <div class="product-details">
+        <span class="product-catagory">{{product.name}}
+        </span>
+        <h4>
+            <a>{{product.color}}</a>
         </h4>
-        <h5>{{product.price}}</h5>
-        <p class="card-text">{{product.color}}</p>
+        <p>You can edit or delete your products!</p>
+        <div class="product-bottom-details">
+            <div class="product-price">{{product.price}}$</div>
+            <div class="product-links">
+
+                <a> <i class="fa fa-trash" (click)="openConfirmModal(product)"></i></a>
+                <a> <i class="fa fa-edit" (click)="openEditModal(product)"></i></a>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,39 +1,3 @@
-<!-- <div class="main">
-    <div class="left" *ngIf="user">
-        <ul>
-            <li class="menu-heading">Dashboards</li>
-            <li><a data-toggle="tab" [routerLink]="['/user/list']"><i class="fa fa-list"></i>My products</a></li>
-            <li><a data-toggle="tab" [routerLink]="['/user/profil']"><i class="fa fa-user"></i> Profile</a></li>
-            <li>
-                <a data-toggle="tab">
-                    <span (click)="logout()">signOut</span><i class="fa fa-sign-out-alt icon"></i>
-
-                </a>
-            </li>
-
-
-        </ul>
-    </div>
-
-    <div class="left" *ngIf="admin">
-        <ul>
-            <li class="menu-heading">Dashboards</li>
-            <li><a data-toggle="tab" [routerLink]="['/admin/list']"><i class="fa fa-list"></i> List of Users</a></li>
-            <li><a data-toggle="tab" [routerLink]="['/admin/profile']"><i class="fa fa-user"></i> Profile</a></li>
-            <li><a data-toggle="tab" [routerLink]="['/admin/products']"><i class="fa fa-line-chart"></i>List of
-                    Products</a>
-            </li>
-            <li>
-                <a data-toggle="tab">
-                    <span (click)="logout()">signOut</span><i class="fa fa-sign-out-alt icon"></i>
-
-                </a>
-            </li>
-
-        </ul>
-    </div>
-</div> -->
-
 <div id="wrapper">
 
     <aside id="sidebar-wrapper" *ngIf="user">
@@ -49,36 +13,36 @@
             </li>
             <li>
                 <a>
-                    <span (click)="logout()">signOut</span><i class="fa fa-sign-out-alt icon"></i>
-
+                    <span (click)="logout()"><i class="fa fa-sign-out"></i>Sign Out</span>
                 </a>
             </li>
-
         </ul>
     </aside>
     <aside id="sidebar-wrapper" *ngIf="admin">
         <div class="sidebar-brand">
-            <h2>Logo</h2>
+            <h2>Lookiimobile</h2>
         </div>
         <ul class="sidebar-nav">
             <li>
-                <a [routerLink]="['/admin/list']"><i class="fa fa-list"></i> List of Users</a>
+                <a [routerLink]="['/admin/list']"><i class="fa fa-users"></i> List of Users</a>
             </li>
             <li>
-                <a [routerLink]="['/admin/profile']"><i class="fa fa-user"></i> Profile</a>
+                <a [routerLink]="['/admin/profile']"><i class="fa fa-user"></i>Profile</a>
             </li>
             <li>
-                <a [routerLink]="['/admin/products']"><i class="fa fa-line-chart"></i>List of
+                <a [routerLink]="['/admin/products']"><i class="fa fa-list"></i>List of
                     Products</a>
             </li>
             <li>
                 <a>
-                    <span (click)="logout()">signOut</span><i class="fa fa-sign-out-alt icon"></i>
-
+                    <span (click)="logout()"><i class="fa fa-sign-out"></i>Sign Out</span>
                 </a>
             </li>
         </ul>
     </aside>
+
+
+
     <div id="navbar-wrapper">
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
@@ -90,10 +54,10 @@
     </div>
 
     <section id="content-wrapper">
-        <div class="row">
+        <!--  <div class="row">
             <div class="col-lg-12">
             </div>
-        </div>
+        </div> -->
     </section>
 
 </div>

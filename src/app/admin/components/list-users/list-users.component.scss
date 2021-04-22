@@ -48,10 +48,6 @@ a:hover {
     text-decoration: none;
 }
 
-.add-user {
-    float: right;
-}
-
 .card {
     position: relative;
     display: flex;
@@ -62,4 +58,11 @@ a:hover {
     background-clip: border-box;
     border: 0 solid transparent;
     border-radius: 0;
+}
+
+.enable {
+    cursor: pointer;
+}
+.disabled {
+    cursor: not-allowed;
 }

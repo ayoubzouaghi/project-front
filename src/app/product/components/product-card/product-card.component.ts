@@ -11,6 +11,8 @@ export class ProductCardComponent implements OnInit {
   @Input() product: any;
   public photo: any
   @Output() editProduct = new EventEmitter
+  @Output() delete = new EventEmitter
+
   constructor(private productservice: ProductService) { }
 
   ngOnInit(): void {
@@ -22,6 +24,10 @@ export class ProductCardComponent implements OnInit {
     }
   }
   openEditModal(product: any) {
+    console.log(product)
     this.editProduct.emit(product)
+  }
+  openConfirmModal(data: any) {
+    this.delete.emit(data)
   }
 }

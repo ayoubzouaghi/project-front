@@ -1,17 +1,10 @@
 <div class="container" *ngIf="products">
-    <a (click)="openModal(null)" class="btn btn-sm btn-success mb-2">Add product</a>
-
-    <div class="row">
-
-
-        <div class="row">
-
-            <div class="col-lg-3 col-md-6 mb-4" *ngFor="let product of products">
-                <app-product-card [product]="product" (editProduct)="openModal($event)"
-                    (updateProductImage)="updatephoto($event,product)"></app-product-card>
-            </div>
+    <a (click)="openModal(null)" class="btn button">Add product</a>
+    <div class="row products-list">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" *ngFor="let product of products ">
+            <app-product-card [product]=" product" (editProduct)="openModal($event)"
+                (updateProductImage)="updatephoto($event,product)" (delete)="openConfirmModal($event)">
+            </app-product-card>
         </div>
-
     </div>
-
 </div>

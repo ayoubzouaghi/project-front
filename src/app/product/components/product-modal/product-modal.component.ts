@@ -11,7 +11,7 @@ import { ProductService } from 'src/app/core/services/product.service';
 export class ProductModalComponent implements OnInit {
   public productForm = new FormGroup({});
   @Input() products: any
-  @Output() update = new EventEmitter;
+  @Output() update = new EventEmitter
   @Output() updateProductImage = new EventEmitter
   public photo: any
   public isImageSaved: boolean = false
@@ -51,10 +51,9 @@ export class ProductModalComponent implements OnInit {
   }
 
   updateProduct() {
-    this.update.emit(this.productForm.value)
+    this.update.emit(this.productForm.value);
   }
   fileProfileEvent(fileInput: any) {
-    console.log('product Modal', fileInput)
     if (fileInput.target.files && fileInput.target.files[0]) {
       const reader = new FileReader();
       reader.onload = (e: any) => {
