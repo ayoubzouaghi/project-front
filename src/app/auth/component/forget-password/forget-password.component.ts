@@ -38,7 +38,6 @@ export class ForgetPasswordComponent implements OnInit {
   }
   forgetPassword() {
     const data = this.prepareLoginInfo();
-    console.log(data)
     this.authService.forgotPassword(data).subscribe((res: any) => {
 
     })
